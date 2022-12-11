@@ -1,0 +1,54 @@
+import {
+  Controller,
+  Get,
+  Param,
+  Post,
+  Delete,
+  Put,
+  Patch,
+  Body,
+  Query,
+} from '@nestjs/common';
+import { MembersService } from './members.service';
+import { Member } from './entities/member.entity';
+import { CreateMemberDto } from './dto/create-member.dto';
+import { UpdateMemberDto } from './dto/update-member.dto';
+import { MembersPage } from './entities/members-page.entity';
+
+@Controller('members')
+export class MembersController {
+  constructor(private readonly membersService: MembersService) {}
+
+  @Get()
+  getMemberListWithPage(
+    @Query('page') page?: number,
+    @Query('per_page') per_page?: number,
+  ): Promise<MembersPage> {
+    return this.membersService.getMemberListWithQuery(page || 1, per_page || 5);
+  }
+
+  @Get(':id')
+  getOne(@Param('id') memberId: number): Promise<Member> {
+    return this.membersService.getMemberById(memberId);
+  }
+
+  @Post()
+  create(@Body() memberData: CreateMemberDto) {
+    return this.membersService.createMember(memberData);
+  }
+
+  @Delete(':id')
+  remove(@Param('id') memberId: number) {
+    return this.membersService.deleteMemberById(memberId);
+  }
+
+  @Put(':id')
+  put(@Param('id') memberId: number, @Body() updateData: UpdateMemberDto) {
+    return this.membersService.updateMember(memberId, updateData);
+  }
+
+  @Patch(':id')
+  patch(@Param('id') memberId: number, @Body() updateData: UpdateMemberDto) {
+    return this.membersService.updateMember(memberId, updateData);
+  }
+}
