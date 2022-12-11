@@ -20,7 +20,7 @@ export class MembersController {
   constructor(private readonly membersService: MembersService) {}
 
   @Get()
-  getMemberListWithPage(
+  getMemberListWithQuery(
     @Query('page') page?: number,
     @Query('per_page') per_page?: number,
   ): Promise<MembersPage> {
@@ -28,27 +28,33 @@ export class MembersController {
   }
 
   @Get(':id')
-  getOne(@Param('id') memberId: number): Promise<Member> {
+  getMemberById(@Param('id') memberId: number): Promise<Member> {
     return this.membersService.getMemberById(memberId);
   }
 
   @Post()
-  create(@Body() memberData: CreateMemberDto) {
+  createMember(@Body() memberData: CreateMemberDto) {
     return this.membersService.createMember(memberData);
   }
 
   @Delete(':id')
-  remove(@Param('id') memberId: number) {
+  deleteMemberById(@Param('id') memberId: number) {
     return this.membersService.deleteMemberById(memberId);
   }
 
   @Put(':id')
-  put(@Param('id') memberId: number, @Body() updateData: UpdateMemberDto) {
+  putMember(
+    @Param('id') memberId: number,
+    @Body() updateData: UpdateMemberDto,
+  ) {
     return this.membersService.updateMember(memberId, updateData);
   }
 
   @Patch(':id')
-  patch(@Param('id') memberId: number, @Body() updateData: UpdateMemberDto) {
+  patchMember(
+    @Param('id') memberId: number,
+    @Body() updateData: UpdateMemberDto,
+  ) {
     return this.membersService.updateMember(memberId, updateData);
   }
 }
