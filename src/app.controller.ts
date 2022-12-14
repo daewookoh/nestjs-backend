@@ -4,6 +4,6 @@ import { Controller, Get } from "@nestjs/common";
 export class AppController {
   @Get()
   home() {
-    return "Welcome to NEST API.";
+    return "Welcome to NEST API";
   }
 }
