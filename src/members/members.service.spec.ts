@@ -1,4 +1,5 @@
 import { Test } from "@nestjs/testing";
+import { IS_BOOLEAN } from "class-validator";
 import { Member } from "./entities/member.entity";
 import { MembersController } from "./members.controller";
 import { MembersService } from "./members.service";
@@ -25,7 +26,8 @@ describe("MembersController", () => {
         last_name: "",
         avatar: "",
         email: "",
-        gender: ""
+        gender: "",
+        is_smoking: false
       };
 
       jest
