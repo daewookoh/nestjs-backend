@@ -1,9 +1,9 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get } from "@nestjs/common";
 
-@Controller('')
+@Controller("")
 export class AppController {
   @Get()
   home() {
-    return 'Welcome to NEST API';
+    return "Welcome to NEST API.";
   }
 }
