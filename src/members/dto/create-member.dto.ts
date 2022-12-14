@@ -16,7 +16,7 @@ export class CreateMemberDto {
   @IsString()
   readonly gender: string;
 
-  @IsNumber()
+  @IsBoolean()
   @IsOptional()
-  readonly is_smoking: number;
+  readonly is_smoking: boolean;
 }
