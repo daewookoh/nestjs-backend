@@ -27,7 +27,7 @@ describe("MembersController", () => {
         avatar: "",
         email: "",
         gender: "",
-        is_smoking: false
+        is_smoking: null
       };
 
       jest
