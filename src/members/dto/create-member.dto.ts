@@ -1,4 +1,4 @@
-import { IsString, IsNumber, IsOptional } from 'class-validator';
+import { IsString, IsNumber, IsOptional } from "class-validator";
 
 export class CreateMemberDto {
   @IsString()
@@ -12,4 +12,7 @@ export class CreateMemberDto {
 
   @IsString()
   readonly email: string;
+
+  @IsString()
+  readonly gender: string;
 }
