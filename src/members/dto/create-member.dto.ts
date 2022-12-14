@@ -1,4 +1,10 @@
-import { IsString, IsNumber, IsOptional, IsBoolean } from "class-validator";
+import {
+  IsString,
+  IsNumber,
+  IsOptional,
+  IsBoolean,
+  IsDate,
+} from "class-validator";
 
 export class CreateMemberDto {
   @IsString()
@@ -19,4 +25,8 @@ export class CreateMemberDto {
   @IsBoolean()
   @IsOptional()
   readonly is_smoking: boolean;
+
+  @IsDate()
+  @IsOptional()
+  readonly birth_date: Date;
 }
