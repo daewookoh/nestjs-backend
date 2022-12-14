@@ -4,4 +4,5 @@ export class Member {
   last_name: string;
   avatar: string;
   email: string;
+  gender: string;
 }
