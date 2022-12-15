@@ -5,7 +5,7 @@ export class Member {
   avatar: string;
   email: string;
   gender: string;
-  is_smoking?: boolean;
+  is_smoking?: string;
   birth_date?: string;
   mobile?: string;
   memo?: string;
