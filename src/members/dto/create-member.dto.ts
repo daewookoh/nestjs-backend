@@ -40,5 +40,9 @@ export class CreateMemberDto {
 
   @IsString()
   @IsOptional()
+  readonly editor: string;
+
+  @IsString()
+  @IsOptional()
   readonly blood_type: string;
 }
