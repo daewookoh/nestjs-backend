@@ -8,4 +8,6 @@ export class Member {
   is_smoking?: boolean;
   birth_date?: string;
   mobile?: string;
+  memo?: string;
+  blood_type?: string;
 }
