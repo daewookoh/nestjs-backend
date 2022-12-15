@@ -26,7 +26,7 @@ export class CreateMemberDto {
   @IsOptional()
   readonly is_smoking: boolean;
 
-  @IsDate()
+  @IsString()
   @IsOptional()
-  readonly birth_date: Date;
+  readonly birth_date: string;
 }

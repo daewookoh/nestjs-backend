@@ -6,5 +6,5 @@ export class Member {
   email: string;
   gender: string;
   is_smoking?: boolean;
-  birth_date?: Date;
+  birth_date?: string;
 }
