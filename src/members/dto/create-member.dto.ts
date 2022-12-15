@@ -29,4 +29,8 @@ export class CreateMemberDto {
   @IsString()
   @IsOptional()
   readonly birth_date: string;
+
+  @IsString()
+  @IsOptional()
+  readonly mobile: string;
 }
