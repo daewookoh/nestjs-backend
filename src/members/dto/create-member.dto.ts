@@ -33,4 +33,8 @@ export class CreateMemberDto {
   @IsString()
   @IsOptional()
   readonly mobile: string;
+
+  @IsString()
+  @IsOptional()
+  readonly memo: string;
 }
