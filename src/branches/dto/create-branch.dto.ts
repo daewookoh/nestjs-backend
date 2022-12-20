@@ -8,41 +8,37 @@ import {
 
 export class CreateBranchDto {
   @IsString()
-  readonly first_name: string;
+  readonly code: string;
 
   @IsString()
-  readonly last_name: string;
+  readonly name: string;
 
   @IsString()
-  readonly avatar: string;
+  readonly name_en: string;
 
   @IsString()
-  readonly email: string;
+  readonly address: string;
 
   @IsString()
-  readonly gender: string;
+  readonly address_en: string;
+
+  @IsString()
+  @IsOptional()
+  readonly parking_info: string;
+
+  @IsString()
+  @IsOptional()
+  readonly parking_info_en: string;
+
+  @IsString()
+  @IsOptional()
+  readonly image_url: string;
+
+  @IsString()
+  @IsOptional()
+  readonly description: string;
 
   @IsBoolean()
   @IsOptional()
-  readonly is_smoking: boolean;
-
-  @IsString()
-  @IsOptional()
-  readonly birth_date: string;
-
-  @IsString()
-  @IsOptional()
-  readonly mobile: string;
-
-  @IsString()
-  @IsOptional()
-  readonly memo: string;
-
-  @IsString()
-  @IsOptional()
-  readonly editor: string;
-
-  @IsString()
-  @IsOptional()
-  readonly blood_type: string;
+  readonly is_active: boolean;
 }
