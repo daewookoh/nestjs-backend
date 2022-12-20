@@ -4,7 +4,6 @@ import {
   Param,
   Post,
   Delete,
-  Put,
   Patch,
   Body,
   Query,
@@ -13,6 +12,7 @@ import { Branch } from "./entities/branch.entity";
 import { BranchesService } from "./branches.service";
 import { BranchesPage } from "./entities/branches-page.entity";
 import { CreateBranchDto } from "./dto/create-branch.dto";
+import { UpdateBranchDto } from "./dto/update-branch.dto";
 
 @Controller("branches")
 export class BranchesController {
@@ -44,19 +44,11 @@ export class BranchesController {
     return this.branchesService.deleteBranchById(branchId);
   }
 
-  @Put(":id")
-  putMember(
-    @Param("id") memberId: number,
-    @Body() updateData: UpdateMemberDto
-  ) {
-    return this.branchesService.updateMember(memberId, updateData);
-  }
-
   @Patch(":id")
-  patchMember(
-    @Param("id") memberId: number,
-    @Body() updateData: UpdateMemberDto
+  patchBranch(
+    @Param("id") branchId: number,
+    @Body() updateData: UpdateBranchDto
   ) {
-    return this.branchesService.updateMember(memberId, updateData);
+    return this.branchesService.updateBranch(branchId, updateData);
   }
 }
