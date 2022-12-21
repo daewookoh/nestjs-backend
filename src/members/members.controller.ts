@@ -24,7 +24,7 @@ export class MembersController {
     @Query("page") page?: number,
     @Query("per_page") per_page?: number
   ): Promise<MembersPage> {
-    return this.membersService.getMemberListWithQuery(page || 1, per_page || 6);
+    return this.membersService.getMemberListWithQuery(page || 1, per_page || 5);
   }
 
   @Get(":id")
