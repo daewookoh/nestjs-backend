@@ -7,7 +7,7 @@ import {
   Put,
   Patch,
   Body,
-  Query,
+  Query
 } from "@nestjs/common";
 import { MembersService } from "./members.service";
 import { Member } from "./entities/member.entity";
