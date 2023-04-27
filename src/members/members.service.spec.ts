@@ -15,6 +15,7 @@ describe("MembersController", () => {
     }).compile();
 
     membersService = moduleRef.get<MembersService>(MembersService);
+
     membersController = moduleRef.get<MembersController>(MembersController);
   });
 
